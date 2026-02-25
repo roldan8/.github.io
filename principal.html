@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Tienda</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body, html { margin: 0; padding: 0; font-family: Arial, sans-serif; }
+
+
+    /* ── Barra morada superior ── */
+    header {
+        background-color: #6B21A8;
+        padding: 18px 32px;
+        display: flex;
+        align-items: center;
+    }
+    .navbar img {
+        height: 60px;
+        object-fit: contain;
+    }
+
+    main { padding: 40px 20px; }
+
+    #order-form { display: none; }
+</style>
+
+
+</head>
+<body>
+
+
+<header>
+    <div class="navbar">
+        <img src="tu-logo.png" alt="Logo de la Empresa">
+    </div>
+</header>
+
+<main>
+    <div class="product-card">
+        <div class="product-front">
+            <img src="producto.jpg" alt="Producto">
+        </div>
+        <div class="product-back">
+            <h2>Descripción del Producto</h2>
+            <p>Detalles sobre el producto.</p>
+            <p>Precio: $20.00</p>
+            <button onclick="document.getElementById('order-form').style.display='block'">Ordenar</button>
+        </div>
+    </div>
+
+    <div id="order-form" class="order-form">
+        <h2>Formulario de Pedido</h2>
+
+        <form
+            action="https://formspree.io/f/mwvnarkk"
+            method="POST"
+        >
+            <input type="text"  name="Nombre"    placeholder="Nombre"             required>
+            <input type="text"  name="Teléfono"  placeholder="Número de Teléfono" required>
+            <input type="text"  name="Dirección" placeholder="Dirección"           required>
+
+            <!-- Redirige a gracias.html al enviar -->
+            <input type="hidden" name="_next"    value="index.html">
+            <!-- Asunto del email -->
+            <input type="hidden" name="_subject" value="🛒 Nuevo Pedido Recibido">
+            <!-- Sin captcha -->
+            <input type="hidden" name="_captcha" value="false">
+
+            <button type="submit">Enviar Pedido</button>
+            <button type="button" onclick="document.getElementById('order-form').style.display='none'">Cancelar</button>
+        </form>
+    </div>
+</main>
+
+
+</body>
+</html>
