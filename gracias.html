@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Gracias por tu compra!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+
+    body {
+        font-family: 'DM Sans', sans-serif;
+        background: #FAF8FF;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* ── Barra morada ── */
+    header {
+        background-color: #6B21A8;
+        padding: 18px 32px;
+        display: flex;
+        align-items: center;
+    }
+    header img {
+        height: 60px;
+        object-fit: contain;
+    }
+
+    /* ── Contenido central ── */
+    .thanks-container {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 60px 24px;
+        text-align: center;
+    }
+
+    /* Logo grande */
+    .logo-big {
+        width: 160px;
+        height: 160px;
+        object-fit: contain;
+        border-radius: 28px;
+        box-shadow: 0 8px 40px rgba(107,33,168,0.2);
+        margin-bottom: 40px;
+        animation: pop 0.6s cubic-bezier(.34,1.56,.64,1) both;
+    }
+
+    @keyframes pop {
+        from { transform: scale(0.5); opacity: 0; }
+        to   { transform: scale(1);   opacity: 1; }
+    }
+
+    /* Checkmark animado */
+    .check-circle {
+        width: 90px;
+        height: 90px;
+        background: linear-gradient(135deg, #7C3AED, #6B21A8);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 32px;
+        box-shadow: 0 8px 32px rgba(107,33,168,0.35);
+        animation: pop 0.5s cubic-bezier(.34,1.56,.64,1) both;
+    }
+
+    .check-circle svg {
+        width: 44px;
+        height: 44px;
+        stroke: white;
+        stroke-width: 3;
+        fill: none;
+        stroke-dasharray: 60;
+        stroke-dashoffset: 60;
+        animation: draw 0.5s 0.4s ease forwards;
+    }
+
+    @keyframes draw {
+        to { stroke-dashoffset: 0; }
+    }
+
+    h1 {
+        font-family: 'Playfair Display', serif;
+        font-size: 2.6rem;
+        color: #3B0F8C;
+        margin-bottom: 14px;
+        animation: fadeUp 0.6s 0.3s both;
+    }
+
+    .subtitle {
+        color: #666;
+        font-size: 1.05rem;
+        max-width: 420px;
+        line-height: 1.7;
+        margin-bottom: 40px;
+        animation: fadeUp 0.6s 0.45s both;
+    }
+
+    @keyframes fadeUp {
+        from { opacity: 0; transform: translateY(18px); }
+        to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .btn-back {
+        display: inline-block;
+        padding: 14px 36px;
+        background: #6B21A8;
+        color: white;
+        text-decoration: none;
+        border-radius: 14px;
+        font-size: 1rem;
+        font-weight: 500;
+        transition: background 0.2s, transform 0.15s;
+        animation: fadeUp 0.6s 0.6s both;
+    }
+
+    .btn-back:hover {
+        background: #3B0F8C;
+        transform: translateY(-2px);
+    }
+
+    /* Confeti decorativo */
+    .confetti-bar {
+        height: 6px;
+        width: 100%;
+        background: linear-gradient(90deg, #7C3AED, #F5C842, #7C3AED, #F5C842);
+        background-size: 300% 100%;
+        animation: slide 3s linear infinite;
+    }
+
+    @keyframes slide {
+        from { background-position: 0% 0%; }
+        to   { background-position: 100% 0%; }
+    }
+</style>
+
+
+</head>
+<body>
+
+
+<div class="confetti-bar"></div>
+
+<header>
+    <img src="tu-logo.png" alt="Logo de la Empresa">
+</header>
+
+<div class="thanks-container">
+
+    <div class="check-circle">
+        <svg viewBox="0 0 24 24">
+            <polyline points="20 6 9 17 4 12"/>
+        </svg>
+    </div>
+
+    <img src="tu-logo.png" alt="Logo" class="logo-big">
+
+    <h1>¡Gracias por su compra!</h1>
+    <p class="subtitle">
+        Hemos recibido su pedido correctamente.<br>
+        Nos pondremos en contacto con usted muy pronto.
+    </p>
+
+    <a href="index.html" class="btn-back">← Volver a la tienda</a>
+</div>
+
+
+</body>
+</html>
